@@ -1,18 +1,7 @@
 /* === GLOBAL === */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 
 #app {
   display: none;
-}
-
-#app,
-#top-header {
-  margin-left: 220px; /* Same as #mobile-menu width */
-  transition: margin-left 0.3s ease;
 }
 
 .section.visible {
@@ -304,8 +293,8 @@ i {
 }
 
 .section {
-/*   margin-left: 220px; /* leave space for sidebar */ */
-/*   margin-right: auto; */
+  margin-left: 220px; /* leave space for sidebar */ 
+  margin-right: auto;
   padding: 2rem;
   width: calc(100% - 260px); /* 220px sidebar + 40px padding/margin */
   max-width: 900px;
@@ -318,8 +307,7 @@ i {
   opacity: 0;
   transition: opacity 0.4s ease;
   border-radius: 20px;
-/*   margin-top: 6rem; */
-  margin: 6rem auto 1rem 400px;
+margin-top: 6rem; 
 
 }
 
