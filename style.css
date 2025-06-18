@@ -3,6 +3,11 @@
   display: none;
 }
 
+#app,
+#top-header {
+  margin-left: 220px; /* Same as #mobile-menu width */
+  transition: margin-left 0.3s ease;
+}
 
 .section.visible {
   opacity: 1;
@@ -308,7 +313,6 @@ i {
   border-radius: 20px;
   margin-top: 6rem;/* ✅ Add this line */
 margin-right: 8rem;
-  margin-left:8rem
  margin-bottom: 1rem;
 }
 html, body {
