@@ -308,6 +308,7 @@ i {
   border-radius: 20px;
   margin-top: 6rem;/* ✅ Add this line */
 margin-right: 8rem;
+  margin-left:8rem
  margin-bottom: 1rem;
 }
 html, body {
