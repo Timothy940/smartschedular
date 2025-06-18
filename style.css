@@ -1,4 +1,16 @@
 /* === GLOBAL === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+.section {
+  padding: 1rem;
+  margin-left: 220px; /* match sidebar width */
+  width: calc(100% - 220px);
+  box-sizing: border-box;
+}
+
 #app {
   display: none;
 }
