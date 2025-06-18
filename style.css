@@ -315,8 +315,8 @@ i {
   opacity: 0;
   transition: opacity 0.4s ease;
   border-radius: 20px;
-  margin-top: 6rem;
-  margin-right: 5rem;
+  margin-top: 2rem;
+  margin-right: 6rem;
   margin-bottom: 1rem;
   width: calc(100% - 240px); /* Adjust if padding exists */
 }
