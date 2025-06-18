@@ -293,7 +293,7 @@ i {
 }
 
 .section {
-  margin-left: 150px; /* leave space for sidebar */
+  margin-left: 220px; /* leave space for sidebar */
   padding: 2rem;
   width: 100%;
   max-width: 800px;
