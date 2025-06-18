@@ -291,21 +291,33 @@ i {
   font-size: 1.2rem;
   color: rgb(19, 2, 108);
 }
+/* Mobile Menu (keep your existing ID) */
+#mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100%;
+  background: rgb(19, 2, 108);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000; /* Ensure menu stays UNDER content if needed */
+}
+
+/* Section Content */
 .section {
-  width: 100%;
+  width: 90%; /* Slightly smaller to prevent edge crowding */
   max-width: 800px;
   margin: 6rem auto 0; /* Centers horizontally */
   padding: 2rem;
   background-color: rgb(19, 2, 108);
   border-radius: 20px;
-  transition: transform 0.3s ease; /* For smooth menu interaction */
-  position: relative;
-  box-sizing: border-box;
+  transition: transform 0.3s ease; /* Smooth slide */
 }
+
 /* When menu is open */
-body.menu-open .section {
-  left: 220px; /* Push content right by full menu width */
-  width: calc(100% - 220px); /* Shrink width to prevent overflow */
+.menu-open .section {
+  transform: translateX(110px); /* Push right by half of menu width */
 }
 html, body {
   height: 100%;
