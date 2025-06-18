@@ -293,11 +293,10 @@ i {
 }
 
 .section {
-  margin-left: 220px; /* leave space for sidebar */ 
-  margin-right: auto;
+  margin-left: 150px; /* leave space for sidebar */
   padding: 2rem;
-  width: calc(100% - 260px); /* 220px sidebar + 40px padding/margin */
-  max-width: 900px;
+  width: 100%;
+  max-width: 800px;
   box-sizing: border-box;
   background-color: rgb(19, 2, 108);
   display: flex;
@@ -307,9 +306,10 @@ i {
   opacity: 0;
   transition: opacity 0.4s ease;
   border-radius: 20px;
-margin-top: 6rem; 
-
+  margin-top: 6rem;
+  margin-right: auto;
 }
+
 
 
 html, body {
