@@ -1,0 +1,154 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <title>SmartSchedular</title>
+    <link rel="icon" href="8329bbbf-2f74-4b65-91d3-455ad85d8bcd.png">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- AOS Animation Library -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- AOS Animations (already added?) -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1976d2" />
+
+</head>
+<body>
+  <header id="top-header">
+    <div id="browser-warning" style="display: none;">
+  <span>
+    🔔 For full features like sound alerts, we recommend using <strong>Firefox</strong> or <strong>Chrome</strong> in browser mode.
+  </span>
+  <button id="dismiss-warning" aria-label="Close warning">×</button>
+</div>
+
+
+</header>
+<!-- Menu Toggle Button (visible only when menu is closed) -->
+<button id="menu-toggle" aria-label="Open Menu">
+  <i class="fas fa-bars"></i>
+</button>
+
+ 
+<!-- Sidebar Menu -->
+<nav id="mobile-menu" class="active"> <!-- 👈 opened by default -->
+  <button id="close-menu" aria-label="Close Menu">×</button>
+  <div id="menu-items">
+    <button onclick="showSection('signup-section')">Sign Up</button>
+    <button onclick="showSection('timetable-section')">Timetable</button>
+    <button onclick="showSection('dashboard-section')">Dashboard</button>
+  </div>
+</nav>
+
+<!-- Custom Splash Screen -->
+<div id="custom-splash">
+  <img src="icon-192.png" alt="SmartSchedular Logo" />
+  <h2>Loading SmartSchedular...</h2>
+</div>
+
+
+  <div id="app" style="display: none;">
+    <!-- Sign-Up Section -->
+    <section id="signup-section"class="section" style="display: none;"data-aos="fade-up">
+    <h1 data-aos="fade-down"><i class="fas fa-calendar-alt"></i>Welcome to SmartSchedular</h1>
+    <!-- <button onclick="showSignUp()">Get Started</button> -->
+    <h2><i class="fas fa-user-plus"></i>Sign Up</h2>
+      <form id="signup-form">
+        <label style="color: white;">Name: <input type="text" id="name" required /></label><br><br>
+        <label style="color: white;" for="interests">Your Interests (separated by commas):</label>
+        <input type="text" id="interests" placeholder="e.g., Coding, Music, Reading" required />
+
+        <button type="submit">Continue</button>
+      </form>
+    </section>
+  
+<!-- Timetable Input Section -->
+<section id="timetable-section"class="section" style="display: none;"data-aos="zoom-in-up">
+  <h2><i class="fas fa-clock"></i>Enter Your Timetable</h2>
+  <button onclick="showSection('signup-section')" class="back-btn">
+  <i class="fas fa-arrow-left"></i> Back
+</button>
+
+  <form id="timetable-form">
+    <input type="text" id="course" placeholder="Course Name" required />
+    <select id="day" required>
+      <option value="">Select Day</option>
+      <option value="Monday">Monday</option>
+      <option value="Tuesday">Tuesday</option>
+      <option value="Wednesday">Wednesday</option>
+      <option value="Thursday">Thursday</option>
+      <option value="Friday">Friday</option>
+    </select>
+    <label style="color: white;" for="start-time">Start Time:</label>
+<input type="time" id="start-time" required />
+
+<label style="color: white;" for="end-time">End Time:</label>
+<input type="time" id="end-time" required />
+
+    <button type="submit">Add Class</button>
+  </form>
+
+  <h3>Your Timetable:</h3>
+  <ul id="timetable-list"></ul>
+  <button onclick="finishSetup()">
+     <i class="fas fa-check-circle"></i> Done
+  </button>
+</section>
+<!-- Dashboard Section -->
+<section id="dashboard-section" class="section" style="display: none;"data-aos="fade-up">
+  <h2><i class="fas fa-gauge"></i>Welcome, <span id="student-name"></span>!</h2>
+<button onclick="showSection('timetable-section')" class="back-btn">
+  <i class="fas fa-arrow-left"></i> Back
+</button>
+
+  <div id="daily-overview" style="margin-top: 1rem;" data-aos="flip-up">
+  <strong>Today is <span id="today-day"></span>.</strong><br>
+  <span id="today-classes"></span>
+</div>
+
+  <h3><i class="fas fa-book-open"></i>Upcoming Classes:</h3>
+  <ul id="upcoming-classes"></ul>
+
+  <h3><i class="fas fa-lightbulb"></i>Suggestions for Free Time:</h3>
+  <ul id="smart-suggestions"></ul>
+  <!-- Task Manager -->
+  <h3><i class="fas fa-list-check"></i> Personal Tasks</h3>
+  <form id="task-form">
+  <input type="text" id="task-input" placeholder="Enter a new task..." required />
+  <button type="submit"><i class="fas fa-plus"></i> Add Task</button>
+</form>
+  <ul id="task-list"></ul>
+  <div id="task-progress-container">
+  <label><strong>Personal Task Progress:</strong></label>
+  <div id="task-progress-bar">
+    <div id="task-progress-fill"></div>
+  </div>
+  <span id="task-progress-percent">0% complete</span>
+  </div>
+  </section>
+</div>
+
+  
+  <!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 600,
+    once: true
+  });
+</script>
+
+<audio id="reminder-sound" src="reminder.mp3.mp3" preload="auto"></audio>
+
+<div id="toast-container"></div>
+<script src="script.js"></script>
+</body>
+</html>
