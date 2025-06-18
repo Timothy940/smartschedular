@@ -306,10 +306,8 @@ i {
   opacity: 0;
   transition: opacity 0.4s ease;
   border-radius: 20px;
-margin: 6rem auto 1rem 220px;
-
-  /*   margin-top: 6rem; */
-/*   margin-right: auto; */
+   margin-top: 6rem; 
+  margin-right: auto; 
 }
 
 
