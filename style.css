@@ -386,22 +386,22 @@ form, ul, .content-block {
   color: #444;
 }
 /* Updated Sidebar Styles */
-#mobile-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 220px;
-  background: rgb(19, 2, 108);
-  transform: translateX(-100%);
-  transition: transform 0.3s ease-in-out;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 1rem;
-  z-index: 1001;
+.section {
+  width: 100%;
+  max-width: 800px;
+  margin: 6rem auto 0; /* Centers horizontally */
+  padding: 2rem;
+  background-color: rgb(19, 2, 108);
+  border-radius: 20px;
+  transition: transform 0.3s ease; /* For smooth menu interaction */
+  position: relative;
+  box-sizing: border-box;
 }
-
+/* When menu is open */
+body.menu-open .section {
+  transform: translateX(110px); /* Push content right by half of menu width */
+  width: calc(100% - 220px); /* Reduce width to account for menu */
+}
 #mobile-menu.active {
   transform: translateX(0);
 }
