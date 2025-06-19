@@ -46,9 +46,12 @@ async function subscribeUser(registration) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Splash + App Init
   const splash = document.getElementById("custom-splash");
   const app = document.getElementById("app");
+
+  const menu = document.getElementById("mobile-menu");
+  const toggleBtn = document.getElementById("menu-toggle");
+  const closeBtn = document.getElementById("close-menu");
 
   setTimeout(() => {
     splash.style.opacity = 0;
@@ -58,42 +61,27 @@ document.addEventListener("DOMContentLoaded", () => {
       showSection("signup-section");
     }, 500);
   }, 1000);
-  menuToggle.addEventListener("click", () => {
-  document.getElementById("mobile-menu").classList.add("active");
-  document.body.classList.add("menu-open"); // ✅ Add this line
-});
 
-const menu = document.getElementById("mobile-menu");
-const toggleBtn = document.getElementById("menu-toggle");
-const closeBtn = document.getElementById("close-menu");
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.add("active");
+      document.body.classList.add("menu-open");
+      toggleBtn.style.display = "none";
+    });
+  }
 
-if (toggleBtn && menu) {
-  toggleBtn.style.display = "none"; // menu starts open
-
-  // Close menu
-  const closeBtn = document.getElementById("close-menu");
-if (closeBtn) {
-  closeBtn.addEventListener("click", () => {
-    document.getElementById("mobile-menu").classList.remove("active");
-    document.body.classList.remove("menu-open"); // ✅ ensure this is here
-    document.getElementById("menu-toggle").style.display = "block"; // ✅ restore toggle
-  });
-} // Reopen menu
-  const toggleBtn = document.getElementById("menu-toggle");
-if (toggleBtn) {
-  toggleBtn.addEventListener("click", () => {
-    document.getElementById("mobile-menu").classList.add("active");
-    document.body.classList.add("menu-open"); // ✅ ensure this is here
-    toggleBtn.style.display = "none";
-  });
-}
-
-}
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      menu.classList.remove("active");
+      document.body.classList.remove("menu-open");
+      toggleBtn.style.display = "block";
+    });
+  }
 
   // Sound Unlock
   document.addEventListener("click", unlockSoundOnFirstTap, { once: true });
 
-  // Signup form logic
+  // Signup logic
   const signupForm = document.getElementById("signup-form");
   signupForm.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -114,8 +102,7 @@ if (toggleBtn) {
     }
   });
 
-  }
-  // Browser warning banner (if installed as PWA)
+  // PWA browser warning
   const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
   const browserWarning = document.getElementById("browser-warning");
   const dismissBtn = document.getElementById("dismiss-warning");
@@ -490,14 +477,6 @@ function handleBack() {
     showSection("signup-section");
   }
 }
-const menuToggle = document.getElementById("menu-toggle");
-if (menuToggle) {
-  menuToggle.addEventListener("click", () => {
-    document.getElementById("mobile-menu").classList.add("active");
-  });
-}
-
-
 
 function sendLocalNotification(title, body) {
   if (Notification.permission === "granted") {
