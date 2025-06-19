@@ -82,9 +82,7 @@ if (menu.classList.contains("active")) {
   }, 500); // ← closes the inner setTimeout only
 
 }, 1000); // ← closes the outer setTimeout
-
-
-  toggleBtn.addEventListener("click", () => {
+toggleBtn.addEventListener("click", () => {
   menu.classList.add("active");
   document.body.classList.add("menu-open");
   toggleBtn.style.display = "none";
@@ -95,6 +93,7 @@ closeBtn.addEventListener("click", () => {
   document.body.classList.remove("menu-open");
   toggleBtn.style.display = "block";
 });
+
 
   // Sound Unlock
   document.addEventListener("click", unlockSoundOnFirstTap, { once: true });
