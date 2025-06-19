@@ -314,7 +314,7 @@ i {
   transition: padding 0.3s ease;
 }
 body.menu-open #app {
-  margin-left: 240px; /* matches #mobile-menu width */
+  margin-left: 200px; /* matches #mobile-menu width */
 }
 
 body:not(.menu-open) #app {
