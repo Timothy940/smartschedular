@@ -469,15 +469,15 @@ body.menu-open #app {
   top: 1rem;
   left: 1rem;
   z-index: 1100;
-  background: rgb(19, 2, 108);
-  color: #1976d2; /* Blue icon */
+  background: transparent;
+  color: #1976d2;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   cursor: pointer;
-  padding: 0.25rem;
-  width: 50%;
-  height: auto;
+  padding: 0.5rem;
+  display: none; /* 👈 hidden by default */
 }
+
 
 /*#menu-items button:hover {
   background: #d1029030;
