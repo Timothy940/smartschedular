@@ -322,7 +322,7 @@ body:not(.menu-open) #app {
 }
 
 .section {
-  width: 70%;
+  width: 60%;
   max-width: 1000px;
 }
 
@@ -407,7 +407,7 @@ form, ul, .content-block {
   position: fixed;
   top: 0;
   left: 0;
-  width: 240px; /* Width of the sidebar */
+  width: 200px; /* Width of the sidebar */
   height: 100vh;
   background: rgb(19,2,108);
   color: white;
