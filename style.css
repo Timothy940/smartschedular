@@ -380,6 +380,7 @@ body.menu-open #app {
     margin-left: 0;
     margin-right: 0;
     border-radius: 20px; /* ✅ Add back rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 1.5rem 1rem;
   }
 }
