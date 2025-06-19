@@ -63,7 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("menu-open"); // ✅ Add this line
 });
 
-  }
 const menu = document.getElementById("mobile-menu");
 const toggleBtn = document.getElementById("menu-toggle");
 const closeBtn = document.getElementById("close-menu");
