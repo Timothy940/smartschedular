@@ -313,9 +313,19 @@ i {
   padding-right: 20px;
   transition: padding 0.3s ease;
 }
-body.menu-open .section {
-  margin-left: 250px; /* Match sidebar width exactly */
+body.menu-open #app {
+  margin-left: 240px; /* matches #mobile-menu width */
 }
+
+body:not(.menu-open) #app {
+  margin-left: 0;
+}
+
+.section {
+  width: 100%;
+  max-width: 1000px;
+}
+
 
 
 html, body {
