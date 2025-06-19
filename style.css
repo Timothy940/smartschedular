@@ -322,7 +322,7 @@ body:not(.menu-open) #app {
 }
 
 .section {
-  width: 100%;
+  width: 70%;
   max-width: 1000px;
 }
 
