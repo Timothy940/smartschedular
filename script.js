@@ -58,11 +58,11 @@ document.addEventListener("DOMContentLoaded", () => {
       showSection("signup-section");
     }, 500);
   }, 1000);
-  const menuToggle = document.getElementById("menu-toggle");
-  if (menuToggle) {
   menuToggle.addEventListener("click", () => {
-    document.getElementById("mobile-menu").classList.add("active");
-  });
+  document.getElementById("mobile-menu").classList.add("active");
+  document.body.classList.add("menu-open"); // ✅ Add this line
+});
+
   }
 const menu = document.getElementById("mobile-menu");
 const toggleBtn = document.getElementById("menu-toggle");
@@ -73,9 +73,11 @@ if (toggleBtn && menu) {
 
   // Close menu
   closeBtn.addEventListener("click", () => {
-    menu.classList.remove("active");
-    toggleBtn.style.display = "block"; // show toggle button
-  });
+  menu.classList.remove("active");
+  toggleBtn.style.display = "block";
+  document.body.classList.remove("menu-open"); // ✅ Add this line
+});
+
 
   // Reopen menu
   toggleBtn.addEventListener("click", () => {
