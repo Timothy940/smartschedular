@@ -84,15 +84,15 @@ if (menu.classList.contains("active")) {
 }, 1000); // ← closes the outer setTimeout
 toggleBtn.addEventListener("click", () => {
   menu.classList.add("active");
-  document.body.classList.add("menu-open");
   toggleBtn.style.display = "none";
 });
 
 closeBtn.addEventListener("click", () => {
   menu.classList.remove("active");
-  document.body.classList.remove("menu-open");
+  // document.body.classList.remove("menu-open"); ✅ not needed anymore
   toggleBtn.style.display = "block";
 });
+
 
 
   // Sound Unlock
