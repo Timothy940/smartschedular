@@ -52,6 +52,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const menu = document.getElementById("mobile-menu");
   const toggleBtn = document.getElementById("menu-toggle");
   const closeBtn = document.getElementById("close-menu");
+// === Ensure hamburger matches sidebar state on load
+if (menu.classList.contains("active")) {
+  toggleBtn.style.display = "none";  // Sidebar open → hide hamburger
+  app.classList.add("shifted");      // Shift content
+} else {
+  toggleBtn.style.display = "block"; // Sidebar closed → show hamburger
+  app.classList.remove("shifted");
+}
 
   setTimeout(() => {
     splash.style.opacity = 0;
@@ -59,7 +67,15 @@ document.addEventListener("DOMContentLoaded", () => {
       splash.style.display = "none";
       app.style.display = "block";
       showSection("signup-section");
-    const sidebar = document.getElementById("mobile-menu");
+    if (menu.classList.contains("active")) {
+  toggleBtn.style.display = "none";
+  app.classList.add("shifted");
+} else {
+  toggleBtn.style.display = "block";
+  app.classList.remove("shifted");
+}
+
+      const sidebar = document.getElementById("mobile-menu");
     if (sidebar.classList.contains("active")) {
       app.classList.add("shifted");
     }
