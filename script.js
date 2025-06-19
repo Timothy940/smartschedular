@@ -61,26 +61,28 @@ if (menu.classList.contains("active")) {
   //app.classList.remove("shifted");
 }
 
-  setTimeout(() => {
-    splash.style.opacity = 0;
-    setTimeout(() => {
-      splash.style.display = "none";
-      app.style.display = "block";
-      showSection("signup-section");
-    if (menu.classList.contains("active")) {
-  toggleBtn.style.display = "none";
-  //app.classList.add("shifted");
-} else {
-  toggleBtn.style.display = "block";
-  //app.classList.remove("shifted");
-}
+ setTimeout(() => {
+  splash.style.opacity = 0;
 
-      const sidebar = document.getElementById("mobile-menu");
-    //if (sidebar.classList.contains("active")) {
-     // app.classList.add("shifted");
+  setTimeout(() => {
+    splash.style.display = "none";
+    app.style.display = "block";
+    showSection("signup-section");
+
+    if (menu.classList.contains("active")) {
+      toggleBtn.style.display = "none";
+    } else {
+      toggleBtn.style.display = "block";
     }
-    }, 500);
-  }, 1000);
+
+    const sidebar = document.getElementById("mobile-menu");
+    // if (sidebar.classList.contains("active")) {
+    //   app.classList.add("shifted");
+    // }
+  }, 500); // ← closes the inner setTimeout only
+
+}, 1000); // ← closes the outer setTimeout
+
 
   toggleBtn.addEventListener("click", () => {
   menu.classList.add("active");
