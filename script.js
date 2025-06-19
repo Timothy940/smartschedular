@@ -69,39 +69,30 @@ if (menu.classList.contains("active")) {
       showSection("signup-section");
     if (menu.classList.contains("active")) {
   toggleBtn.style.display = "none";
-  app.classList.add("shifted");
+  //app.classList.add("shifted");
 } else {
   toggleBtn.style.display = "block";
-  app.classList.remove("shifted");
+  //app.classList.remove("shifted");
 }
 
       const sidebar = document.getElementById("mobile-menu");
-    if (sidebar.classList.contains("active")) {
-      app.classList.add("shifted");
+    //if (sidebar.classList.contains("active")) {
+     // app.classList.add("shifted");
     }
     }, 500);
   }, 1000);
 
-  if (toggleBtn) {
-    toggleBtn.addEventListener("click", () => {
-      menu.classList.add("active");
-      document.body.classList.add("menu-open");
-      toggleBtn.style.display = "none"; // ✅ Hide hamburger
-      toggleBtn.style.display = "none";
-      app.classList.add("shifted");
+  toggleBtn.addEventListener("click", () => {
+  menu.classList.add("active");
+  document.body.classList.add("menu-open");
+  toggleBtn.style.display = "none";
+});
 
-    });
-  }
-
-  if (closeBtn) {
-    closeBtn.addEventListener("click", () => {
-      menu.classList.remove("active");
-      document.body.classList.remove("menu-open");
-      toggleBtn.style.display = "block";
-      app.classList.remove("shifted");
-
-    });
-  }
+closeBtn.addEventListener("click", () => {
+  menu.classList.remove("active");
+  document.body.classList.remove("menu-open");
+  toggleBtn.style.display = "block";
+});
 
   // Sound Unlock
   document.addEventListener("click", unlockSoundOnFirstTap, { once: true });
