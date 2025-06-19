@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleBtn.addEventListener("click", () => {
       menu.classList.add("active");
       document.body.classList.add("menu-open");
+      toggleBtn.style.display = "none"; // ✅ Hide hamburger
       toggleBtn.style.display = "none";
       app.classList.add("shifted");
 
