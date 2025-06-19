@@ -59,6 +59,10 @@ document.addEventListener("DOMContentLoaded", () => {
       splash.style.display = "none";
       app.style.display = "block";
       showSection("signup-section");
+    const sidebar = document.getElementById("mobile-menu");
+    if (sidebar.classList.contains("active")) {
+      app.classList.add("shifted");
+    }
     }, 500);
   }, 1000);
 
@@ -67,6 +71,8 @@ document.addEventListener("DOMContentLoaded", () => {
       menu.classList.add("active");
       document.body.classList.add("menu-open");
       toggleBtn.style.display = "none";
+      app.classList.add("shifted");
+
     });
   }
 
@@ -75,6 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
       menu.classList.remove("active");
       document.body.classList.remove("menu-open");
       toggleBtn.style.display = "block";
+      app.classList.remove("shifted");
+
     });
   }
 
