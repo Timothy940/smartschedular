@@ -485,3 +485,8 @@ body.menu-open #app {
 #mobile-menu.active ~ .menu-toggle-btn {
   display: none;
 }
+/* === Prevent content from overlapping sidebar === */
+#app.shifted {
+  margin-left: 250px; /* Adjust if your sidebar width is different */
+  transition: margin-left 0.3s ease;
+}
