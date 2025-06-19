@@ -488,6 +488,6 @@ body.menu-open #app {
 }
 /* === Prevent content from overlapping sidebar === */
 #app.shifted {
-  margin-left: 250px; /* Adjust if your sidebar width is different */
-  transition: margin-left 0.3s ease;
+  transition: none;
 }
+
