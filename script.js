@@ -55,10 +55,10 @@ document.addEventListener("DOMContentLoaded", () => {
 // === Ensure hamburger matches sidebar state on load
 if (menu.classList.contains("active")) {
   toggleBtn.style.display = "none";  // Sidebar open → hide hamburger
-  app.classList.add("shifted");      // Shift content
+  //app.classList.add("shifted");      // Shift content
 } else {
   toggleBtn.style.display = "block"; // Sidebar closed → show hamburger
-  app.classList.remove("shifted");
+  //app.classList.remove("shifted");
 }
 
   setTimeout(() => {
