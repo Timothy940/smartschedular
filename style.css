@@ -399,7 +399,7 @@ form, ul, .content-block {
   width: 60%;            /* 👈 Reduce from 100% or 80% */
   max-width: 280px;      /* Optional: to limit size on large screens */
   height: 100%;
-  background-color: white;
+  background-color: rgb(19,2,108);
   z-index: 999;
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
   padding: 20px;
