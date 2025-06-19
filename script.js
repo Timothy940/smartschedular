@@ -71,18 +71,23 @@ if (toggleBtn && menu) {
   toggleBtn.style.display = "none"; // menu starts open
 
   // Close menu
+  const closeBtn = document.getElementById("close-menu");
+if (closeBtn) {
   closeBtn.addEventListener("click", () => {
-  menu.classList.remove("active");
-  toggleBtn.style.display = "block";
-  document.body.classList.remove("menu-open"); // ✅ Add this line
-});
-
-
-  // Reopen menu
-  toggleBtn.addEventListener("click", () => {
-    menu.classList.add("active");
-    toggleBtn.style.display = "none"; // hide toggle again
+    document.getElementById("mobile-menu").classList.remove("active");
+    document.body.classList.remove("menu-open"); // ✅ ensure this is here
+    document.getElementById("menu-toggle").style.display = "block"; // ✅ restore toggle
   });
+} // Reopen menu
+  const toggleBtn = document.getElementById("menu-toggle");
+if (toggleBtn) {
+  toggleBtn.addEventListener("click", () => {
+    document.getElementById("mobile-menu").classList.add("active");
+    document.body.classList.add("menu-open"); // ✅ ensure this is here
+    toggleBtn.style.display = "none";
+  });
+}
+
 }
 
   // Sound Unlock
@@ -109,11 +114,6 @@ if (toggleBtn && menu) {
     }
   });
 
-  const closeMenuBtn = document.getElementById("close-menu");
-  if (closeMenuBtn) {
-  closeMenuBtn.addEventListener("click", () => {
-    document.getElementById("mobile-menu").classList.remove("active");
-  });
   }
   // Browser warning banner (if installed as PWA)
   const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
