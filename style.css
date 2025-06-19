@@ -1,8 +1,10 @@
 /* === GLOBAL === */
 #app {
   display: none;
+  transition: margin-left 0.3s ease;
+  height: 100%;
+  padding: 1rem;
 }
-
 
 .section.visible {
   opacity: 1;
@@ -20,7 +22,7 @@
 
 body {
   font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background:white;
+  background: white;
   padding: 0;
   color: #ffffff;
   text-align: center;
@@ -29,14 +31,11 @@ body {
   max-width: 100%;
   overflow-x: hidden;
 }
- 
+
 h1, h2, h3 {
   color: #ffffff;
   font-weight: 600;
 }
-
-/* === SECTION CARDS === */
-
 
 /* === FORM ELEMENTS === */
 input, select, button, textarea {
@@ -47,19 +46,17 @@ input, select, button, textarea {
   border-radius: 8px;
   font-size: 16px;
   box-sizing: border-box;
-    border-left: 5px solid #700150;
-
+  border-left: 5px solid #700150;
 }
 
 input:focus, select:focus, textarea:focus {
   outline: none;
-   /* border-color: #cd7604; */
-  /* border-left: 5px solid #ff00b7; */
+}
 
-}
 i.fas.fa-check-circle {
-  color: rgb(19, 2, 108); /* Change to your preferred color */
+  color: rgb(19, 2, 108);
 }
+
 /* === BUTTONS === */
 button {
   background-color: #ffffff;
@@ -68,11 +65,11 @@ button {
   padding: 12px 18px;
   font-size: 16px;
   margin-top: 10px;
+  margin-bottom: 1rem;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   border-left: 5px solid #700150;
-
 }
 
 button:hover {
@@ -83,7 +80,7 @@ button:hover {
 ul {
   list-style: none;
   padding-left: 0;
-color: rgb(19, 2, 108);
+  color: rgb(19, 2, 108);
 }
 
 li {
@@ -96,18 +93,25 @@ li {
   align-items: center;
   animation: fadeIn 0.4s ease-in-out;
   border-left: 5px solid #700150;
-
 }
 
 #timetable-list li {
-  background-color: #f7f9fb;
+  background-color: #ffffff;
   color: rgb(21, 1, 1);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.5s ease;
 }
 
-
+#timetable-list span {
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.4;
+}
 
 i.fas.fa-trash-alt {
-  color:rgb(19, 2, 108) ;
+  color: rgb(19, 2, 108);
   cursor: pointer;
   width: auto;
   height: auto;
@@ -168,9 +172,6 @@ i {
   color: #ffffff;
 }
 
-/* .fas.fa-list-check { */ /* color: rgb(255, 255, 255); */
-/* } */
-
 /* === ANIMATIONS === */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
@@ -182,21 +183,20 @@ i {
   to { opacity: 1; transform: scale(1); }
 }
 
-/* === RESPONSIVE === */
-@media (max-width: 600px) {
-  section {
-    padding: 1.2rem;
-    margin: 1rem;
-  }
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
-  h1, h2 {
-    font-size: 1.5rem;
-  }
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
 
-  input, select, button {
-    font-size: 14px;
-  }
-}  
+.slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+/* === BACK BUTTON === */
 .back-btn {
   background-color: transparent;
   color: #ffffff;
@@ -214,26 +214,13 @@ i {
   color: #f1f3f6;
 }
 
-@media (max-width: 480px) {
-  section {
-    padding: 1.5rem 1rem;
-    margin: 1rem auto;
-  }
-
-  input, select, button {
-    font-size: 15px;
-  }
-
-  .back-btn {
-    font-size: 14px;
-  }
-}
+/* === HEADER === */
 #top-header {
   position: sticky;
   top: 0;
   background-color: #ffffff;
   border-bottom: 1px solid #ddd;
-  padding: 0.2rem ;
+  padding: 0.2rem;
   display: flex;
   align-items: center;
   z-index: 1000;
@@ -247,27 +234,89 @@ i {
   color: #333;
 }
 
-#timetable-list li {
-  background-color: #ffffff;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  margin-bottom: 1rem;
+/* === SECTION === */
+.section {
+  width: 60%;
+  max-width: 1000px;
+  margin: 6rem auto 1rem auto;
+  box-sizing: border-box;
+  background-color: rgb(19, 2, 108);
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  border-left: 5px solid #700150;
-  animation: fadeIn 0.5s ease;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 20px;
+  padding: 2rem;
 }
 
-#timetable-list span {
+/* === SIDEBAR === */
+#mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background: rgb(19,2,108);
+  color: white;
+  padding: 1rem;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+#mobile-menu.active {
+  transform: translateX(0);
+}
+
+#menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 80%;
+  align-items: center;
+}
+
+#menu-items button {
+  background: #fefefe;
+  color: rgb(19, 2, 108);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
   text-align: left;
-  font-size: 15px;
-  line-height: 1.4;
+  width: 90%;
+  font-size: 16px;
+  cursor: pointer;
 }
 
+/* === MENU TOGGLE === */
+#menu-toggle {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1100;
+  background: transparent;
+  color: #1976d2;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: none;
+}
 
+/* === CONTENT SHIFT ON DESKTOP ONLY === */
+body.menu-open #app {
+  margin-left: 200px;
+}
 
+@media (max-width: 768px) {
+  body.menu-open #app {
+    margin-left: 0 !important;
+  }
+}
+
+/* === SPLASH === */
 #custom-splash {
   position: fixed;
   inset: 0;
@@ -292,86 +341,7 @@ i {
   color: rgb(19, 2, 108);
 }
 
-.section {
-  width: 50%;
-  max-width: 1000px;
-  margin: 0 auto;
-/*   : 1rem 1rem; */
-  box-sizing: border-box;
-  background-color: rgb(19, 2, 108);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  border-radius: 20px;
-  margin-top: 6rem;/* ✅ Add this line */
-/* margin-right: 8rem; */
- margin-bottom: 1rem;
-  padding-left: 20px;
-  padding-right: 20px;
-  transition: padding 0.3s ease;
-}
-body.menu-open #app {
-  margin-left: 200px; /* matches #mobile-menu width */
-}
-
-body:not(.menu-open) #app {
-  margin-left: 0;
-}
-
-.section {
-  width: 60%;
-  max-width: 1000px;
-}
-
-
-
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
-#app {
-  height: 100%;
-}
-
-
-@media (max-width: 768px) {
-  .section {
-    width: 50%;
-    margin-top: 1rem;
-    border-radius: 0;
-    padding: 1.5rem 1rem;
-  }
-}
-form, ul, .content-block {
-  width: 100%;
-  max-width: 100%;
-}
-.section h2:first-child {
-  margin-top: 0;
-}
-/* Basic fade-in */
-.fade-in {
-  animation: fadeIn 0.5s ease forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* Optional slide-up effect */
-.slide-up {
-  animation: slideUp 0.8s ease-out forwards;
-}
-
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
+/* === BROWSER WARNING === */
 #browser-warning {
   background-color: #fff3cd;
   color: #856404;
@@ -401,103 +371,45 @@ form, ul, .content-block {
 #dismiss-warning:hover {
   color: #444;
 }
-/* Updated Sidebar Styles */
-/* === SIDEBAR MENU === */
-#mobile-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 200px; /* Width of the sidebar */
-  height: 100vh;
-  background: rgb(19,2,108);
-  color: white;
-  padding: 1rem;
-  transform: translateX(-100%);
-  transition: transform 0.3s ease;
-  z-index: 1000;
-}
-#mobile-menu.active {
-  transform: translateX(0);
-}
-body.menu-open #app {
-  margin-left: 200px; /* Match sidebar width */
-}
 
-/* === MAIN CONTENT === */
-#app {
-  transition: margin-left 0.3s ease;
-  padding: 1rem;
-}
-
-/* === HAMBURGER ICON === */
-#menu-toggle {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  font-size: 24px;
-  color: rgb(19,2,108);
-  cursor: pointer;
-  z-index: 9999; /* ensure it's on top */
-}
-
+/* === MOBILE RESPONSIVENESS === */
 @media (max-width: 768px) {
-  body.menu-open #app {
-    margin-left: 0; /* Prevent shifting on small screens */
+  .section {
+    width: 90%;
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.3rem;
+  }
+
+  input, select, button {
+    font-size: 15px;
+  }
+
+  #menu-toggle {
+    display: block;
   }
 }
 
-#close-menu {
-  align-self: flex-end;
-  background: transparent;
-  border: none;
-  font-size: 2rem;
-  color: white;
-  cursor: pointer;
+@media (max-width: 480px) {
+  .section {
+    padding: 1.2rem 1rem;
+    margin: 1rem auto;
+  }
+
+  .back-btn {
+    font-size: 14px;
+  }
 }
 
-#menu-items {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 80%;
-  align-items: center;
+/* === BASIC RESET === */
+img, video, canvas {
+  max-width: 100%;
+  height: auto;
 }
 
-#menu-items button {
-  background: #fefefe;
-  color: rgb(19, 2, 108);
-  border: none;
-  padding: 10px 15px;
-  border-radius: 6px;
-  text-align: left;
-  width: 80%;
-  font-size: 16px;
-  cursor: pointer;
+* {
+  box-sizing: border-box;
 }
-#menu-toggle {
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
-  z-index: 1100;
-  background: transparent;
-  color: #1976d2;
-  border: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  padding: 0.5rem;
-  display: none; /* 👈 hidden by default */
-}
-
-
-/*#menu-items button:hover {
-  background: #d1029030;
-}*/
-
-#mobile-menu.active ~ .menu-toggle-btn {
-  display: none;
-}
-/* === Prevent content from overlapping sidebar === */
-#app.shifted {
-  transition: none;
-}
-
