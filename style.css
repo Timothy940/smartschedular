@@ -302,7 +302,7 @@ i {
   font-size: 1.8rem;
   cursor: pointer;
   padding: 0.5rem;
-  display: none;
+  display: block;
 }
 
 /* === CONTENT SHIFT ON DESKTOP ONLY === */
