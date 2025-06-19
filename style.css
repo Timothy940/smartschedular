@@ -373,16 +373,17 @@ body.menu-open #app {
 }
 
 /* === MOBILE RESPONSIVENESS === */
-  @media (max-width: 768px) {
+ @media (max-width: 768px) {
   .section {
     width: 100%;
     margin-top: 2.5rem;
     margin-left: 0;
     margin-right: 0;
-    border-radius: 0;
+    border-radius: 20px; /* ✅ Add back rounded corners */
     padding: 1.5rem 1rem;
   }
 }
+
 
 
   h1, h2, h3 {
