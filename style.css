@@ -459,7 +459,7 @@ body.menu-open #app {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 100%;
+  width: 80%;
   align-items: center;
 }
 
@@ -470,7 +470,7 @@ body.menu-open #app {
   padding: 10px 15px;
   border-radius: 6px;
   text-align: left;
-  width: 100%;
+  width: 800%;
   font-size: 16px;
   cursor: pointer;
 }
