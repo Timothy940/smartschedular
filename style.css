@@ -420,7 +420,7 @@ form, ul, .content-block {
   transform: translateX(0);
 }
 body.menu-open #app {
-  margin-left: 240px; /* Match sidebar width */
+  margin-left: 200px; /* Match sidebar width */
 }
 
 /* === MAIN CONTENT === */
@@ -435,7 +435,7 @@ body.menu-open #app {
   top: 10px;
   left: 10px;
   font-size: 24px;
-  color: #333;
+  color: rgb(19,2,108);
   cursor: pointer;
   z-index: 9999; /* ensure it's on top */
 }
