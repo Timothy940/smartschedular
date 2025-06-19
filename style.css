@@ -422,13 +422,14 @@ body.menu-open #app {
 /* === HAMBURGER ICON === */
 #menu-toggle {
   position: fixed;
-  top: 1rem;
-  left: 1rem;
+  top: 10px;
+  left: 10px;
   font-size: 24px;
-  z-index: 1100;
   color: #333;
   cursor: pointer;
+  z-index: 9999; /* ensure it's on top */
 }
+
 @media (max-width: 768px) {
   body.menu-open #app {
     margin-left: 0; /* Prevent shifting on small screens */
