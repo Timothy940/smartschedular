@@ -5,6 +5,11 @@
   height: 100%;
   padding: 1rem;
 }
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 
 .section.visible {
   opacity: 1;
@@ -375,12 +380,10 @@ body.menu-open #app {
 /* === MOBILE RESPONSIVENESS === */
  @media (max-width: 768px) {
   .section {
-    width: 100%;
-    margin-top: 2.5rem;
-    margin-left: 0;
-    margin-right: 0;
+    width: 100vw;
+    margin: 0;
     border-radius: 20px; /* ✅ Add back rounded corners */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(19, 2, 108);
     padding: 1.5rem 1rem;
   }
 }
