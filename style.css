@@ -387,8 +387,8 @@ body.menu-open #app {
     margin-right: 0;
     padding: 1.5rem 1rem;
     border-radius: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* ✅ Visible soft shadow */
-    background-color: rgb(19, 2, 108); /* Ensure it stays colored */
+    box-shadow: 0 4px 12px rgba(19, 2, 108); /* ✅ Visible soft shadow */
+/*     background-color: rgb(19, 2, 108); /* Ensure it stays colored */ */
   }
 }
 
