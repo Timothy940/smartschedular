@@ -3,9 +3,7 @@
   display: none;
   transition: margin-left 0.3s ease;
   height: 100%;
-  width: 100vw;
-  max-width: 100vw;
-  padding: 0;
+  padding: 1rem;
 }
 html, body {
   margin: 0;
@@ -380,16 +378,19 @@ body.menu-open #app {
 }
 
 /* === MOBILE RESPONSIVENESS === */
- @media (max-width: 768px) {
+@media (max-width: 768px) {
   .section {
-    width: 100vw;           /* Force full viewport width */
-    max-width: 100vw;
-    margin: 2.5rem 0 1rem 0; /* Spacing from top + bottom only */
-    padding: 1.5rem 0;       /* Remove left/right padding */
-    border-radius: 0;        /* Optional: flat edges on mobile */
-    box-shadow: rgb(19,2,108);        /* Optional: remove shadow if needed */
+    width: 100%;
+    max-width: 100%;
+    margin-top: 2.5rem; /* ✅ Add space between hamburger and section */
+    margin-left: 0;
+    margin-right: 0;
+    padding: 1.5rem 1rem;
+    border-radius: 20px;
+    box-shadow: rgba(19, 2, 108,);
   }
 }
+
 
 
 
